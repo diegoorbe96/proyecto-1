@@ -4,7 +4,7 @@ var cantidad_targets_actual
 var cantidad_seleccionados
 var timer_cronometro
 var timer_generacion
-var colores = ["#ff1100", "#eeff00", "#26ff00", "#00ffd0", "#0011ff", "#ff00bf"]
+var colores = ["#2038b2", "#ce1616", "#4ed01a", "#c53ace"]
 
 //Variables resultados.
 var cantidad_errores
@@ -29,7 +29,7 @@ function pressedButton() {
     var i = parseInt(id_recortado[0]) - 1
     var j = parseInt(id_recortado[1]) - 1
     if (matriz_juego[i][j] == 1) {
-        boton.style.backgroundColor = '#cccbc8'
+        boton.style.backgroundColor = '#171716'
         matriz_juego[i][j] = 0
         deespawn_time[cantidad_seleccionados] = document.getElementById("cronometro").textContent
 
@@ -104,7 +104,7 @@ function comienzoJuego() {
     //Hago desaparecer las partes de input y hago aparecer el cronometro:
     document.getElementById("container_inputs").style.display = "none"
     document.getElementById("cronometro").style.display = "block"
-    document.getElementById("cronometro").style.visibility = "visible"
+        // document.getElementById("cronometro").style.visibility = "visible"
         //Inicializo el cronometro.
     document.getElementById("cronometro").textContent = "0.00"
     timer_cronometro = setInterval(actualizar_timer, 10)
@@ -136,7 +136,7 @@ function actualizar_elementos() {
     if (matriz_juego[i_rand][j_rand] == 0) {
         //Si la celda esta libre, le pongo un cuadradito
         matriz_juego[i_rand][j_rand] = 1;
-        var color_rand = Math.floor(Math.random() * (colores.length - 1))
+        var color_rand = Math.floor(Math.random() * (colores.length))
         document.getElementById("c" + (i_rand + 1) + "-" + (j_rand + 1)).style.backgroundColor = colores[color_rand];
         cantidad_targets_actual++;
     }
@@ -178,7 +178,7 @@ function reinicio_juego() {
     document.getElementById("container_inputs").style.display = "block"
         //Saco el Modal y el boton de mostrar resultados.
     $('#modal_resultados').modal("hide")
-    document.getElementById("resultados").style.visibility = "hidden"
+    document.getElementById("resultados").style.display = "none"
     document.getElementById("item-modal-tiempo").style.opacity = 0;
     document.getElementById("item-modal-errores").style.opacity = 0;
     document.getElementById("item-modal-promedio").style.opacity = 0;
@@ -195,7 +195,7 @@ function reinicio_juego() {
 function fin_de_juego() {
     //Aca finalizo el juego.
     clearInterval(timer_cronometro)
-    document.getElementById("resultados").style.visibility = "visible"
+    document.getElementById("resultados").style.display = "block"
     document.getElementById("cronometro").style.display = "none"
     tiempo_transcurrido = document.getElementById("cronometro").textContent
     promedio_diferencias = promedio_apuntado()
@@ -318,6 +318,13 @@ function promedio_apuntado() {
     for (i = 0; i < diff.length; i++) {
         suma += diff[i]
     }
-
     return (suma / diff.length).toFixed(2)
+}
+
+
+//CAMBIAR A LA MIERDA.
+function mantenerFondo() {
+    document.getElementById("targets").style.backgroundColor = "#333030"
+    document.getElementById("targets").style.color = "white"
+
 }

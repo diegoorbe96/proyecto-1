@@ -12,9 +12,16 @@
     <title>Mi Proyecto 1 de IAW - Diego Orbe</title>
 </head>
 
-<body>
+<body id="body_pag">
+    <div class="pixel-border"></div>
     <div class="container">
-        <h1> Reflex and accuracy test </h1>
+        <div id="title_sub">
+            <div id="div-title"> <img src="crosshair.png" alt="crosshair" id="imagen-logo" width="32px" height="32px">
+                <h1 id="title" class="texto_header"> Accuracy and Reaction Practical Test. </h1>
+            </div>
+            <div id="subtitle" class="texto_header">Pon a prueba tus reflejos y punteria.</div>
+        </div>
+
 
         <div class="modal fade" id="modal_resultados" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -25,22 +32,22 @@
                     <div class="modal-body">
                         <div id="item-modal-tiempo">
                             <a id="tooltip_tiempo" href="#" class="tooltip-test" title="Tiempo en completar la secuencia de botones.">Tiempo Transcurrido: </a>
-                            <p id="tiempo_a_mostrar">T</p>
+                            <p id="tiempo_a_mostrar" class="modal-text">T</p>
                         </div>
 
                         <div id="item-modal-errores">
                             <a id="tooltip_errores" href="#" class="tooltip-test" title="Cantidad de clicks errados.">Errores cometidos: </a>
-                            <p id="errores_a_mostrar">E</p>
+                            <p id="errores_a_mostrar" class="modal-text">E</p>
                         </div>
 
                         <div id="item-modal-promedio">
                             <a id="tooltip_promedio" href="#" class="tooltip-test" title="Tiempo promedio entre apuntado de un boton a otro">Tiempo promedio de apuntado: </a>
-                            <p id="promedio_a_mostrar">Pr</p>
+                            <p id="promedio_a_mostrar" class="modal-text">Pr</p>
                         </div>
 
                         <div id="item-modal-puntaje">
                             <a id="tooltip_puntaje" href="#" class="tooltip-test" title="Puntaje final teniendo en cuenta las variables anteriores.">Puntaje final: </a>
-                            <p id="puntaje_a_mostrar">P</p>
+                            <p id="puntaje_a_mostrar" class="modal-text">P</p>
                         </div>
 
                         <div id="item-modal-flavour">
@@ -55,38 +62,39 @@
                 </div>
             </div>
         </div>
+        <div id="container-input-tabla" class="rounded-lg">
+            <div id="container_inputs">
+                <div class="input-group mb-3" id="input_dif">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Dificultad</label>
+                    </div>
+                    <select class="custom-select" id="dificultad_juego">
+                          <option value="1">Facil</option>
+                          <option value="2">Medio</option>
+                          <option value="3">Dificil</option>
+                        </select>
+                </div>
+                <div class="input-group input-group-sm  mb-3 " id="input_cant">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="cant_objetivos">Cantidad de Objetivos: </span>
+                    </div>
+                    <input id="targets" type="number" min="25" max="50" value="30" onkeydown="return false" class="form-control" placeholder="cantidad" aria-label="cantidad" onclick="mantenerFondo()" aria-describedby="cant_objetivos">
+                    <button type="button" class="btn btn-primary" id="boton_comienzo" onclick="comienzoJuego()">Comenzar!</button>
+                </div>
+            </div>
 
-        <div id="container_inputs">
-            <div class="input-group mb-3" id="input_dif">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Dificultad</label>
-                </div>
-                <select class="custom-select" id="dificultad_juego">
-                  <option value="1">Facil</option>
-                  <option value="2">Medio</option>
-                  <option value="3">Dificil</option>
-                </select>
+            <div id="container-tabla">
+
             </div>
-            <div class="input-group input-group-sm  mb-3 " id="input_cant">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="cant_objetivos">Cantidad de Objetivos: </span>
-                </div>
-                <input id="targets" type="number" min="25" max="50" value="30" onkeydown="return false" class="form-control" placeholder="cantidad" aria-label="cantidad" aria-describedby="cant_objetivos">
-                <button type="button" class="btn btn-primary" id="boton_comienzo" onclick="comienzoJuego()">Comenzar!</button>
-            </div>
+            <div id="cronometro">0.00</div>
+            <button type="button" class="btn btn-primary" id="resultados" onclick="mostrarResultados()">Mostrar Resultados</button>
         </div>
 
-        <div id="container-tabla">
-
-        </div>
-
     </div>
-    <div id="cronometro">0.00</div>
-    <button type="button" class="btn btn-primary" id="resultados" onclick="mostrarResultados()">Mostrar Resultados</button>
+    <div class="pixel-border"></div>
 
-    </div>
 
-    </div>
+
 
     <!-- JavaScript -->
     <script src="js/app.js"></script>
