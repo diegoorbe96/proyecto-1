@@ -322,7 +322,6 @@ function promedio_apuntado() {
 }
 
 
-//CAMBIAR A LA MIERDA.
 function mantenerFondo() {
     document.getElementById("targets").style.backgroundColor = "#333030"
     document.getElementById("targets").style.color = "white"
