@@ -306,3 +306,8 @@ function fadeIn(el, i) {
 
 
 //-----------------------------------------------------------------------------------------------------------
+function mantenerFondo() {
+    document.getElementById("targets").style.backgroundColor = "#333030"
+    document.getElementById("targets").style.color = "white"
+
+}
