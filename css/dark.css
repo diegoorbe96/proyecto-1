@@ -11,11 +11,27 @@
 .pixel-border {
     background-color: #ff003a;
     height: 5px;
+    min-width: 100%;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    position: relative;
     width: 100%;
 }
 
+#btn-estilo {
+    position: absolute;
+    left: 0%;
+}
+
 #title_sub {
+    align-self: center;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    position: relative;
 }
 
 #div-title {
@@ -28,6 +44,7 @@
 }
 
 #title {
+    text-align: center;
     display: inline;
     font-size: 1.75rem;
     vertical-align: top;
@@ -39,7 +56,8 @@
 }
 
 .container {
-    width: 600px;
+    min-width: 600px !important;
+    max-width: 600px !important;
 }
 
 #container-input-tabla {
@@ -59,23 +77,28 @@
 }
 
 .input-group-text {
-    background-color: #544f4f;
-    color: white;
+    background-color: #544f4f !important;
+    color: white !important;
     font-weight: bold;
-    border-color: #544f4f;
+    border-color: #544f4f !important;
 }
 
 .form-control,
 .custom-select {
-    background-color: #333030;
-    color: white;
-    border-color: #544f4f;
+    background-color: #333030 !important;
+    color: white !important;
+    border-color: #544f4f !important;
 }
 
 .btn-primary {
-    background-color: #ff003a;
+    background-color: #ff003a !important;
     font-weight: bold;
-    border-color: #544f4f;
+    border-color: #544f4f !important;
+}
+
+#btn-estilo {
+    background-color: #2b2a27 !important;
+    border-color: #2b2a27 !important;
 }
 
 #resultados {
@@ -91,17 +114,8 @@
     height: 38px;
 }
 
+#container-tabla,
 .grid-container {
-    display: grid;
-    width: 500px;
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #171716;
-    justify-content: space-around;
-}
-
-#container-tabla {
     display: grid;
     width: 500px;
     height: 500px;
