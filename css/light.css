@@ -85,7 +85,7 @@
 .form-control,
 .custom-select {
     background-color: white !important;
-    color: white;
+    color: black !important;
     border-color: #8fb2e4 !important;
 }
 
@@ -181,4 +181,28 @@
     font-size: 40px;
     color: black;
     display: none;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer .logo-empresa {
+    float: right;
+}
+
+.footer .footer-desc {
+    float: left;
+    margin-left: 5px;
+    text-align: left;
+    width: 40%;
+}
+
+.footer .footer-desc .footer-desc-title {
+    color: black;
+    font-weight: bold;
+}
+
+.footer .footer-desc .footer-desc-text {
+    color: rgb(70, 68, 68);
 }

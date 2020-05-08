@@ -240,7 +240,6 @@ function mantenerFondo() {
     } else {
         document.getElementById("targets").style.backgroundColor = "white"
         document.getElementById("targets").style.color = "black"
-
     }
 
 }

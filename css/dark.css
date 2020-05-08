@@ -183,3 +183,27 @@
     color: #878684;
     display: none;
 }
+
+.footer {
+    text-align: center;
+}
+
+.footer .logo-empresa {
+    float: right;
+}
+
+.footer .footer-desc {
+    float: left;
+    margin-left: 5px;
+    text-align: left;
+    width: 40%;
+}
+
+.footer .footer-desc .footer-desc-title {
+    color: white;
+    font-weight: bold;
+}
+
+.footer .footer-desc .footer-desc-text {
+    color: rgb(148, 146, 146);
+}
