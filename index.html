@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- CSS -->
     <link rel="stylesheet" id="stylesheet" href="css/light.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -61,8 +60,15 @@
 
 
                     </div>
+
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="reinicio_juego()">Reiniciar Partida</button>
+                        <div id="share-buttons">
+                            <button type="button" id="tw-btn" class="share-button" onclick="compartirPuntaje(1)"><img src="twitter.png" alt="tw-icon" ></button>
+                            <button type="button" id="wp-btn" class="share-button" onclick="compartirPuntaje(2)"><img src="whatsapp.png" alt="wp-icon"></button>
+                        </div>
+
+                        <button type="button" id="restart-button" class="btn btn-primary" onclick="reinicio_juego()">Reiniciar Partida</button>
                     </div>
                 </div>
             </div>

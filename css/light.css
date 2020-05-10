@@ -150,6 +150,17 @@
 
 .modal-footer,
 .modal-header {
+    text-align: center;
+    background-color: #9394d6;
+}
+
+#restart-button {
+    float: right;
+}
+
+.modal-footer,
+.modal-header {
+    text-align: center;
     background-color: #9394d6;
 }
 
@@ -205,4 +216,18 @@
 
 .footer .footer-desc .footer-desc-text {
     color: rgb(70, 68, 68);
+}
+
+#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+}
+
+.share-button {
+    background-color: #9394d6;
+    border: 0;
+    box-shadow: 0;
 }

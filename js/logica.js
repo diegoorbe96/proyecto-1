@@ -6,7 +6,8 @@ class Logica {
     cantidad_errores;
     deespawn_time;
     promedio_diferencias;
-    puntaje_final;
+    puntaje_final; //Usando formula
+    puntaje; //Categoria
     tiempo_transcurrido;
     dificultad;
 
@@ -68,7 +69,7 @@ class Logica {
     calculoPuntaje() {
         var salida = []
         salida[0] = this.calculo_puntaje_final();
-
+        this.puntaje = salida[0];
         //Defino el flavour text en base al puntaje que consiguio
         switch (salida[0]) {
             case "F":

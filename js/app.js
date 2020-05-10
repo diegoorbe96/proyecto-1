@@ -229,6 +229,23 @@ function reinicio_juego() {
     logica = null
 
 }
+
+
+function compartirPuntaje(option) {
+    var url = "https://diegoorbe96.github.io/proyecto-1/";
+
+    var text = "Obtuve una " + logica.puntaje + " entrenando con ARPT, intenta superarme!";
+    switch (option) {
+        case 1:
+            //Caso twitter
+            window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+            break;
+        case 2:
+            window.open("http://wa.me/?text=" + text + " en: " + url, '', 'left=0,top=0,personalbar=0,toolbar=0,scrollbars=0')
+            break;
+    }
+}
+
 //----------------------------------------------------------------------------------------------------------
 
 //----------------------------------------Funciones Auxiliares Graficas-------------------------------------
@@ -296,7 +313,6 @@ function fadeIn(el, i) {
 //-----------------------------------------------------------------------------------------------------------
 
 
-//----------------------------------------Funciones Auxiliares Logica----------------------------------------
 
 
 
