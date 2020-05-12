@@ -8,14 +8,17 @@ var logica
 load_ls()
 
 
+//Guarda el local-storage la cantidad de objetivos
 function updateCant() {
     localStorage.setItem("record-cant", document.getElementById("targets").value)
 }
 
+//Guarda en local-storage la dificultad de juego
 function updateDif() {
     localStorage.setItem("record-dif", document.getElementById("dificultad_juego").value)
 }
 
+//Recupera los datos de local storage
 function load_ls() {
     //Recupero el estilo
     var estilo_rec = localStorage.getItem('record-estilo');
@@ -39,6 +42,7 @@ function load_ls() {
 }
 
 
+//Genera un cuadrado en una posicion aleatoria, siempre que dicha celda este libre
 function actualizar_elementos() {
     //Elijo un elemento random
     var i_rand = Math.floor(Math.random() * (logica.matriz_juego.length))
@@ -63,7 +67,7 @@ function actualizar_elementos() {
 
 
 
-
+//Prepara el modal de los resultados y muestra el boton de Mostrar Resultados
 function fin_de_juego() {
     //Aca finalizo el juego.
     clearInterval(timer_cronometro)
@@ -81,18 +85,8 @@ function fin_de_juego() {
 }
 
 
-
-
-
-
-
-
-
-
-//----------------------------------------Interaccion de Usuario--------------------------------------------
-
+//Prepara todo para el inicio de juego (Grid, cronometro, variables de puntaje, etc)
 function comienzoJuego() {
-
     partida_en_progreso = true
         //Creo la grid
     var lim
@@ -138,7 +132,7 @@ function comienzoJuego() {
 
 }
 
-
+//Hace las animaciones de los resultados.
 function mostrarResultados() {
     $('#modal_resultados').modal('show')
         //Muestro los elementos de a uno.
@@ -153,6 +147,9 @@ function mostrarResultados() {
 
 }
 
+
+//Cuando el usuario presiona un boton, se actualizan las variables de la logica del juego
+//Junto a su representacion grafica.
 function pressedButton() {
 
     if (logica.cantidad_seleccionados == logica.cantidad_targets_max) {
@@ -190,7 +187,7 @@ function pressedButton() {
 
 
 
-
+//Cambio de estilo, siempre y cuando el usuario no este en una partida.
 function boton_estilo() {
     if (!partida_en_progreso) {
         if (estilo_actual == "dark") {
@@ -208,7 +205,7 @@ function boton_estilo() {
 }
 
 
-
+//Cierra el modal, habilita las opciones del comienzo.
 function reinicio_juego() {
     //Vuelvo a habilitar todo lo de la pantalla principal
     document.getElementById("container_inputs").style.display = "block"
@@ -231,6 +228,7 @@ function reinicio_juego() {
 }
 
 
+//Manejo del share with, tanto de Whatsapp y Twitter
 function compartirPuntaje(option) {
     var url = "https://diegoorbe96.github.io/proyecto-1/";
 
@@ -241,7 +239,7 @@ function compartirPuntaje(option) {
             window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
             break;
         case 2:
-            window.open("http://wa.me/?text=" + text + " en: " + url, '', 'left=0,top=0,personalbar=0,toolbar=0,scrollbars=0')
+            window.open("http://api.whatsapp.com/send?text=" + text + " en: " + url, '', 'left=0,top=0,personalbar=0,toolbar=0,scrollbars=0')
             break;
     }
 }
@@ -249,18 +247,6 @@ function compartirPuntaje(option) {
 //----------------------------------------------------------------------------------------------------------
 
 //----------------------------------------Funciones Auxiliares Graficas-------------------------------------
-//CAMBIAR: Mantiene el color del fondo para el input "Cantidad de Objetivos"
-function mantenerFondo() {
-    if (estilo_actual == "dark") {
-        document.getElementById("targets").style.backgroundColor = "#333030"
-        document.getElementById("targets").style.color = "white"
-    } else {
-        document.getElementById("targets").style.backgroundColor = "white"
-        document.getElementById("targets").style.color = "black"
-    }
-
-}
-
 
 
 function crear_grid(lim) {
@@ -301,7 +287,7 @@ function actualizar_timer() {
     cronometro.textContent = tiempo
 }
 
-
+//Animacion de fadein
 function fadeIn(el, i) {
     var go = function(i) {
         setTimeout(function() {
@@ -311,18 +297,3 @@ function fadeIn(el, i) {
     for (i = 0; i <= 1; i = i + 0.01) go(i);
 }
 //-----------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-//-----------------------------------------------------------------------------------------------------------
-function mantenerFondo() {
-    document.getElementById("targets").style.backgroundColor = "#333030"
-    document.getElementById("targets").style.color = "white"
-
-}
